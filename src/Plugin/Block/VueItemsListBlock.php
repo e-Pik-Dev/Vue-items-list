@@ -98,7 +98,7 @@ class VueItemsListBlock extends BlockBase {
     $form[$this->maxItemsNoFieldName] = [
       '#type' => 'textfield',
       '#title' => $this->t('Maximum items to show in list'),
-      '#default_value' => $config[$this->maxItemsNoFieldName] ?? 0,
+      '#default_value' => $config[$this->maxItemsNoFieldName] ?? "",
     ];
 
     return $form;
