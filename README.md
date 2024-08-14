@@ -6,15 +6,24 @@ The Vue component fetches and lists data from a predefined API endpoint (configu
 
 ## Installation
 
-Placing the block is possible via Block layout page:
+1. Use composer to install the module
+   ```shell
+   composer require epik-dev/vue-items-list
+   ```
 
-1. Log in as an administrator on your Drupal site
-2. Navigate to `Manage->Structure->Block layout`, or try the
-   link `{drupal_site_basepath}/admin/structure/block`
-3. Select a block region where you want to place the block, e.g. Header (block region names are specific to themes) and
-   click `Place block` button
-4. In the block list that opens, find the `Vue items list` block or type it in the filter textfield
-5. Once found, click `Place block` button next to it, configure options if necessary
+2. Once installed, to enable the module, go to the `Extend` page (`Manage->Extend`), find
+   `Vue items list (Test Module)`, tick a checkbox in front of it and click `Install` button
+
+
+3. Place the block via at Block layout page:
+
+    1. Log in as an administrator on your Drupal site
+    2. Navigate to `Manage->Structure->Block layout`, or try the
+       link `{drupal_site_basepath}/admin/structure/block`
+    3. Select a block region where you want to place the block, e.g. Header (block region names are specific to themes)
+       and click `Place block` button
+    4. In the block list that opens, find the `Vue items list` block or type it in the filter textfield
+    5. Once found, click `Place block` button next to it, configure options if necessary
 
 ## Configuration options
 
