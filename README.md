@@ -29,7 +29,7 @@ The Vue component fetches and lists data from a predefined API endpoint (configu
 When placing or configuring a block, two configuration options are available:
 
 - **API endpoint**: The URL of the API endpoint to retrieve data
-- **Maximum items to show in the list**: Maximum number of data items displayed in the block
+- **Maximum items to show**: Maximum number of data items displayed in the block
 
 ## Technical info
 

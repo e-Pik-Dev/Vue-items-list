@@ -97,7 +97,7 @@ class VueItemsListBlock extends BlockBase {
     // Add the endpoint form field to the existing block configuration form.
     $form[$this->maxItemsNoFieldName] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Maximum items to show in list'),
+      '#title' => $this->t('Maximum items to show'),
       '#default_value' => $config[$this->maxItemsNoFieldName] ?? "",
     ];
 
