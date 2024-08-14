@@ -1,5 +1,6 @@
 {
   "name": "epik-dev/vue-items-list",
+  "version": "1.0",
   "description": "Vue items list drupal module (test). Module adds a 'Vue items list' block that fetches data from an API endpoint and renders it as a list of items. It uses a Vue 3 / Typescript component for rendering.",
   "type": "drupal-module",
   "keywords": [
