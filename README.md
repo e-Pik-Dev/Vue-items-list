@@ -1,7 +1,7 @@
 # Vue items list
 
-This is a test Drupal module that adds a block (named Vue items list) which renders Vue 3 / Typescript component
-compiled by Vite.
+This is a test Drupal module that adds a `Vue items list` block which uses Vue 3 SFC / Typescript component
+compiled to render content.
 The Vue component fetches and lists data from a predefined API endpoint (configurable).
 
 ## Installation
@@ -11,7 +11,7 @@ The Vue component fetches and lists data from a predefined API endpoint (configu
    composer require epik-dev/vue-items-list
    ```
 
-2. Once installed, to enable the module, go to the `Extend` page (`Manage->Extend`, {drupal_site}/admin/modules), find
+2. Once installed, to enable the module, go to the `Extend` page (`Manage->Extend`, `{drupal_site}/admin/modules`), find
    `Vue items list (Test Module)`, tick a checkbox in front of it and click `Install` button
 
 
@@ -28,29 +28,28 @@ The Vue component fetches and lists data from a predefined API endpoint (configu
 
 When placing or configuring a block, two configuration options are available:
 
-- **endpoint**: API url to make a GET request
-- **maxItemsNo**: Maximum number of items to display
+- **API endpoint**: The URL of the API endpoint to retrieve data
+- **Maximum items to show in list**: Maximum number of data items displayed in the block
 
 ## Technical info
 
 Vue component is build as native ES module employing Vite, which compiles Vue SFC component into separate index.js and
-index.css are files placed in `/component`
-folder loaded, which are loaded by the module to render its content.   
-Component source code folder is `/vite/src`
+index.css files, which are loaded by the module to render its content.
 
-However, for this build to work, this module loads a separate Vue esm version from CDN.
+Component source code folder is `/vite/src`
+Component build code folder `/component`
+
+However, for this build to work, this module loads a separate Vue esm version from CDN, its url is specified under
+`vue.cdn.esm` key in `vue_items_list.libraries.yml`.
 
 Modern Vue development best practices include using Vue SFCs (Single File Components), TypeScript, and Vite
 tooling.
 
 Vue SFCs are files that can contain a block of code for scripts, templates, and styles that combine and encapsulate
-all aspects of a component.
-
-To use Typescript for Vue, a transpilation step is required, converting Typescript -> JS.
-
-Vite handles all of the above. Moreover, it accelerates development with HMR and provides rich build options.
+all aspects of a component. To use Typescript for Vue, a transpilation step is required, converting Typescript -> JS.
+Vite handles all of the above, moreover, it accelerates development with HMR and provides rich build options.
 
 ## Requirements
 
-* Drupal 8.x, 9.x, 10.x.
-
+* Drupal 9.x, 10.x.
+* PHP >= 8.0

@@ -1,8 +1,9 @@
 <?php
 
 /**
- * Test module that uses Vue 3 / Typescript component to render component that
- * fetches data from API endpoint.
+ * Test module that exposes a `Vue items list` block that uses Vue 3 /
+ * Typescript component to fetch and render data from API
+ * endpoint.
  */
 
 use Drupal\Component\Serialization\Json;
