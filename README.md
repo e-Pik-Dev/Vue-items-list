@@ -28,7 +28,7 @@ When placing or configuring a block, two configuration options are available:
 Vue component is build as native ES module employing Vite, which compiles Vue SFC component into separate index.js and
 index.css are files placed in `/component`
 folder loaded, which are loaded by the module to render its content.   
-Component source code folder is `/vite/src/`
+Component source code folder is `/vite/src`
 
 However, for this build to work, this module loads a separate Vue esm version from CDN.
 
