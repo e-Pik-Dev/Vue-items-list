@@ -1,0 +1,10 @@
+:root {
+    --spinner-color: rgb(229 231 235);
+    --spinner-fill: #1c64f2;
+    --spinner-size: 2rem;
+
+    /* some CSS reset */
+    ul {
+        margin: 0;
+    }
+}

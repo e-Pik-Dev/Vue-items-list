@@ -1,0 +1,20 @@
+vue.cdn.esm:
+  remote: https://github.com/vuejs/vue-next
+  version: 3.4.37
+  license:
+    name: MIT
+    url: https://github.com/vuejs/core/blob/v3.4.37/LICENSE
+    gpl-compatible: true
+  js:
+    //cdn.jsdelivr.net/npm/vue@3.4.37/+esm: { attributes: { type: importmap, specifier: "vue" } }
+
+item.list.component:
+  version: 1.0
+  js:
+    component/index.js: { minified: true, attributes: { type: module, defer: true } }
+  css:
+    component:
+      component/index.css: { minified: true }
+  dependencies:
+    - core/drupal
+    - core/drupalSettings

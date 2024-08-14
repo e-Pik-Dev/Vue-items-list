@@ -1,0 +1,12 @@
+name: Vue items list (Test Module)
+description: It's a test module, Fetches data from a public API endpoint and displaying it vie Vue component
+package: Custom
+
+type: module
+
+core: 8.x
+core_version_requirement: ">=8"
+
+version: 0.3
+
+php: 8.0

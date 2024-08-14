@@ -1,0 +1,84 @@
+<?php
+
+/**
+ * Test module that uses Vue 3 / Typescript component to render component that
+ * fetches data from API endpoint.
+ */
+
+use Drupal\Component\Serialization\Json;
+use Drupal\Core\Render\BubbleableMetadata;
+
+/**
+ * Turn module library assets with attribute type='importmap' and having a
+ * specifier into imports defined inside a importmap script tag to
+ * resolve Vue specifier when importing our component as it's
+ * a module
+ *
+ * Implements hook_page_attachments().
+ *
+ * @phpstan-param array $attachments
+ */
+function vue_items_list_page_attachments(array &$attachments): void {
+  $metadata = BubbleableMetadata::createFromRenderArray($attachments);
+
+  $importMaps = getImportMaps();
+
+  if (!$importMaps) {
+    return;
+  }
+
+  $metadata->addAttachments([
+    'html_head' => [
+      [
+        [
+          '#tag' => 'script',
+          '#attributes' => ['type' => 'importmap'],
+          '#value' => Json::encode([
+            'imports' => $importMaps,
+          ]),
+        ],
+        'vue_items_list',
+      ],
+    ],
+  ]);
+
+  $metadata->applyTo($attachments);
+}
+
+function getImportMaps(): array {
+  /** @var \Drupal\Core\Asset\LibraryDiscoveryInterface $libraryDiscovery */
+  $libraryDiscovery = \Drupal::service('library.discovery');
+  $moduleLibrary = $libraryDiscovery->getLibrariesByExtension('vue_items_list');
+
+  if (!$moduleLibrary) {
+    return [];
+  }
+
+  $importMaps = [];
+
+  foreach ($moduleLibrary as $library) {
+    foreach ($library['js'] as $js) {
+      if (($mapping = getImportMapFromLibraryEntry($js))) {
+        $importMaps = array_merge($importMaps, $mapping);
+      }
+    }
+  }
+
+  return $importMaps;
+}
+
+/**
+ * @param array|null $js Library data for js key
+ *
+ * @return array
+ */
+function getImportMapFromLibraryEntry(?array $js): array {
+  $type = $js['attributes']['type'] ?? NULL;
+  $specifier = $js['attributes']['specifier'] ?? NULL;
+
+  if ($type === "importmap" && $specifier) {
+    return [$specifier => $js['data']];
+  }
+
+  return [];
+}
