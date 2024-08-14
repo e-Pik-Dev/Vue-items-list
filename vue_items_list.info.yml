@@ -7,6 +7,6 @@ type: module
 core: 8.x
 core_version_requirement: ">=8"
 
-version: 0.3
+version: "1.0"
 
 php: 8.0
