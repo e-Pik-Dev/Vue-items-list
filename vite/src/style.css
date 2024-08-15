@@ -1,10 +1,35 @@
-:root {
-    --spinner-color: rgb(229 231 235);
-    --spinner-fill: #1c64f2;
-    --spinner-size: 2rem;
+@import url('https://fonts.googleapis.com/css?family=Inter');
 
-    /* some CSS reset */
-    ul {
-        margin: 0;
-    }
+:root {
+  /* component variables */
+  --component-font-family: 'Inter', sans-serif;
+  --component-font-size: 16px;
+  --component-bg-color: rgb(243 244 246);
+  --component-max-width: 64rem;
+  --component-padding: 0.75em;
+
+  /* card variables */
+  --card-background-color: rgb(255 255 255);
+  --card-border-color: rgb(229 231 235);
+  --card-border-width: 1px;
+  --card-border-style: solid;
+  --card-border-radius: 0.75em;
+  --card-padding: 1em;
+
+  --card-main-item-color: rgb(31 41 55);
+  --card-main-item-line-height: 1.25em;
+  --card-main-item-font-size: 1em;
+  --card-main-item-font-weight: 500;
+  --card-main-item-padding-top: calc(var(--card-padding) * 0.5);
+
+  --card-item-color: rgb(107 114 128);
+  --card-item-line-height: 1.25em;
+  --card-item-font-size: 0.875em;
+  --card-item-font-weight: 300;
+  --card-item-padding-end: 0.75em;
+
+  /* spinner variables */
+  --spinner-color: rgb(229 231 235);
+  --spinner-fill: #1c64f2;
+  --spinner-size: 2em;
 }
